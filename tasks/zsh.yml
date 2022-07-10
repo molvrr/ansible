@@ -1,8 +1,10 @@
 - name: ZSH Installation
+  become: yes
   apt: name=zsh
 
 - name: Change shell to ZSH
   shell: chsh -s $(which zsh)
+  become_user: pop-os
 
 - name: Check that configuration file exists
   stat:
