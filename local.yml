@@ -14,3 +14,4 @@
     - include: tasks/nvim.yml
     - include: tasks/zsh.yml
     - include: tasks/productivity-tools.yml
+    - include: tasks/music.yml
