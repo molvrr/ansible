@@ -1,0 +1,15 @@
+- name: ZSH Installation
+  apt: name=zsh
+
+- name: Change shell to ZSH
+  shell: chsh -s $(which zsh)
+
+- name: Check that configuration file exists
+  stat:
+    path: /home/pop-os/.oh-my-zsh
+  register: oh_my_stats
+
+- name: Oh-My-ZSH
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh > ~/.oh-my-installer && chmod +x ~/.oh-my-installer && ~/.oh-my-installer
+  when: oh_my_stats.stat.exists == False
+  become_user: pop-os
