@@ -16,3 +16,4 @@
     - include: tasks/productivity-tools.yml
     - include: tasks/music.yml
     - include: tasks/security.yml
+    - include: tasks/asdf.yml
