@@ -1,4 +1,4 @@
 - name: Install packages
   become: yes
   apt:
-    name: [ "tmux", "fzf" ]
+    name: [ "tmux", "fzf", "xclip" ]

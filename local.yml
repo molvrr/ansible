@@ -15,3 +15,4 @@
     - include: tasks/zsh.yml
     - include: tasks/productivity-tools.yml
     - include: tasks/music.yml
+    - include: tasks/security.yml
