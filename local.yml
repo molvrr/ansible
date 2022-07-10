@@ -12,3 +12,4 @@
     - include: tasks/discord.yml
     - include: tasks/git.yml
     - include: tasks/nvim.yml
+    - include: tasks/zsh.yml
