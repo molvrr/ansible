@@ -17,3 +17,4 @@
     - include: tasks/music.yml
     - include: tasks/security.yml
     - include: tasks/asdf.yml
+    - include: tasks/npm-packages.yml

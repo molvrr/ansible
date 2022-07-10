@@ -1,0 +1,16 @@
+- name: Yarn Installation
+  npm:
+    name: yarn
+    global: yes
+- name: Typescript Server Installation
+  npm:
+    name: typescript-language-server
+    global: yes
+- name: Typescript Installation
+  npm:
+    name: typescript
+    global: yes
+- name: TS-Node Installation
+  npm:
+    name: ts-node
+    global: yes
