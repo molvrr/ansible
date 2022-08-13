@@ -14,7 +14,7 @@
     - include: tasks/nvim.yml
     - include: tasks/zsh.yml
     - include: tasks/productivity-tools.yml
-    - include: tasks/music.yml
     - include: tasks/security.yml
     - include: tasks/asdf.yml
-    - include: tasks/npm-packages.yml
+    - include: tasks/dotfiles.yml
+      #- include: tasks/npm-packages.yml

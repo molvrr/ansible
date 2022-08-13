@@ -1,0 +1,10 @@
+- name: Clone dotfiles
+  git:
+    repo: 'https://github.com/molvrr/dotfiles'
+    dest: "{{ lookup('env', 'HOME') }}/dotfiles"
+
+- name: Stow Neovim
+  shell: "cd {{ lookup('env', 'HOME') }}/dotfiles && stow nvim"
+
+- name: Stow TMUX
+  shell: "cd {{ lookup('env', 'HOME') }}/dotfiles && stow tmux"
