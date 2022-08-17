@@ -1,24 +1,4 @@
-- name: Remove Neovim
-  file:
-    path: "{{ lookup('env', 'HOME') }}/neovim"
-    state: absent
+- name: Neovim Installation
   become: yes
-
-- name: Clone Neovim
-  git:
-    repo: 'https://github.com/neovim/neovim.git'
-    dest: "{{ lookup('env', 'HOME') }}/neovim"
-    version: release-0.7
-
-- name: Build Neovim
-  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
-
-- name: Install Neovim
-  become: yes
-  shell: "cd {{ lookup('env', 'HOME') }}/neovim && checkinstall"
-
-- name: Remove Neovim
-  file:
-    path: "{{ lookup('env', 'HOME') }}/neovim"
-    state: absent
-  become: yes
+  apt:
+    deb: https://github.com/neovim/neovim/releases/download/v0.7.2/nvim-linux64.deb
