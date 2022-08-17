@@ -1,12 +1,12 @@
 - name: Git Clone ASDF
   git:
     repo: https://github.com/asdf-vm/asdf.git
-    dest: ~/.asdf
+    dest: "{{ lookup('env', 'HOME') }}/.asdf"
     version: v0.10.0
 
 - name: Check .zshrc exists
   stat:
-    path: $HOME/.zshrc
+    path: "{{ lookup('env', 'HOME') }}/.zshrc"
   register: zshstats
 
 - name: Append ASDF to .zshrc

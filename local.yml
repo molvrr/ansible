@@ -1,4 +1,5 @@
 - hosts: localhost
+  gather_facts: no
   vars:
     wallpapers_folder: "{{ lookup('env', 'HOME') }}/Pictures/Wallpapers"
     wallpaper_path: "{{ wallpapers_folder }}/wallpaper.jpg"
