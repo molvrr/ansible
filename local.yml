@@ -1,4 +1,7 @@
 - hosts: localhost
+  vars:
+    wallpapers_folder: "{{ lookup('env', 'HOME') }}/Pictures/Wallpapers"
+    wallpaper_path: "{{ wallpapers_folder }}/wallpaper.jpg"
   pre_tasks:
     - name: Update APT
       become: yes
@@ -8,6 +11,7 @@
         state: present
   tasks:
     - include: tasks/core.yml
+    - include: tasks/tweaks.yml
     - include: tasks/vivaldi.yml
     - include: tasks/discord.yml
     - include: tasks/git.yml
@@ -18,4 +22,4 @@
     - include: tasks/work.yml
     - include: tasks/asdf.yml
     - include: tasks/dotfiles.yml
-      #- include: tasks/npm-packages.yml
+    - include: tasks/node.yml

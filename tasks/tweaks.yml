@@ -1,0 +1,12 @@
+- name: Create Wallpapers Folder
+  file:
+    dest: "{{ wallpapers_folder }}"
+    state: directory
+
+- name: Wallpaper download
+  get_url:
+    url: https://images.squarespace-cdn.com/content/5e72b7324df07c684ef08ed2/1607649882128-UH9B66XSFYQFEJ2AYN2J/study_0517.jpg
+    dest: "{{ wallpaper_path }}"
+
+- name: Set Wallpaper
+  command: "gsettings set org.gnome.desktop.background picture-uri-dark file://{{ wallpaper_path }}"

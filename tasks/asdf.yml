@@ -3,10 +3,24 @@
     repo: https://github.com/asdf-vm/asdf.git
     dest: ~/.asdf
     version: v0.10.0
+
 - name: Check .zshrc exists
   stat:
     path: $HOME/.zshrc
   register: zshstats
+
 - name: Append ASDF to .zshrc
   shell: echo ". $HOME/.asdf/asdf.sh" >> $HOME/.zshrc
   when: zshstats.stat.exists == True
+
+- name: Check ASDF Plugins
+  shell: asdf plugin list
+  register: asdfplugins
+
+- name: ASDF Node Plugin
+  shell: asdf plugin-add nodejs
+  when: "'nodejs' not in asdfplugins.stdout"
+
+- name: ASDF Ruby Plugin
+  shell: asdf plugin-add ruby
+  when: "'ruby' not in asdfplugins.stdout"

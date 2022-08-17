@@ -1,3 +1,6 @@
+- name: Node Installation
+  shell: asdf install nodejs lts && asdf global nodejs lts
+
 - name: Yarn Installation
   npm:
     name: yarn

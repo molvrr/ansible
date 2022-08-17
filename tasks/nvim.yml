@@ -1,8 +1,3 @@
-- name: Remove Neovim
-  file:
-    path: ~/neovim
-    state: absent
-
 - name: Clone Neovim
   git:
     repo: 'https://github.com/neovim/neovim.git'
@@ -15,3 +10,8 @@
 - name: Install Neovim
   become: yes
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && checkinstall"
+
+- name: Remove Neovim
+  file:
+    path: "{{ lookup('env', 'HOME') }}/neovim"
+    state: absent
