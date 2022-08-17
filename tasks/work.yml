@@ -1,0 +1,4 @@
+- name: Mattermost installation
+  become: yes
+  apt: deb=https://releases.mattermost.com/desktop/5.1.0/mattermost-desktop_5.1.0-1_amd64.deb
+  state: present

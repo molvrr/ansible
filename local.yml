@@ -15,6 +15,7 @@
     - include: tasks/zsh.yml
     - include: tasks/productivity-tools.yml
     - include: tasks/security.yml
+    - include: tasks/work.yml
     - include: tasks/asdf.yml
     - include: tasks/dotfiles.yml
       #- include: tasks/npm-packages.yml
